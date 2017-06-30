@@ -1,57 +1,41 @@
 package data;
 
-//CategoryInfo 클래스입니다.
-public class CategoryInfo {
+//ListInfo 클래스입니다.
+public class ListInfo {
 	
-	private int category_serial;
-	private int category_id;
-	private int category_order;
+	private int id;
 	private int group_id;
 	private String author;
 	private String img_id;
 	private String title;
 	private int view_count;
 	private int like_count;
+	private int category_id;
+	private int date;
+	private int bg_img;
 	
-	public CategoryInfo
-	(int category_serial, int category_id, int category_order, int group_id,
-			String author, String img_id, String title, int view_count, int like_count)
+	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img)
 	{
-		this.setCategory_serial(category_serial);
-		this.setCategory_id(category_id);
-		this.setCategory_order(category_order);
+		this.setId(id);
 		this.setGroup_id(group_id);
 		this.setAuthor(author);
 		this.setImg_id(img_id);
 		this.setTitle(title);
 		this.setView_count(view_count);
 		this.setLike_count(like_count);
+		this.setCategory_id(category_id);
+		this.setDate(date);
+		this.setBg_img(bg_img);
 	}
 	
-	public int getCategory_serial() {
-		return category_serial;
+	public int getId() {
+		return id;
 	}
 	
-	public void setCategory_serial(int category_serial) {
-		this.category_serial = category_serial;
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public int getCategory_id() {
-		return category_id;
-	}
-	
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
-	}
-	
-	public int getCategory_order() {
-		return category_order;
-	}
-	
-	public void setCategory_order(int category_order) {
-		this.category_order = category_order;
-	}
-	
+		
 	public int getGroup_id() {
 		return group_id;
 	}
@@ -98,5 +82,29 @@ public class CategoryInfo {
 	
 	public void setLike_count(int like_count) {
 		this.like_count = like_count;
+	}
+	
+	public int getCategory_id() {
+		return category_id;
+	}
+	
+	public void setCategory_id(int category_id) {
+		this.category_id = category_id;
+	}
+	
+	public int getDate() {
+		return date;
+	}
+	
+	public void setDate(int date) {
+		this.date = date;
+	}
+	
+	public int getBg_img() {
+		return bg_img;
+	}
+	
+	public void setBg_img(int bg_img) {
+		this.bg_img = bg_img;
 	}
 }

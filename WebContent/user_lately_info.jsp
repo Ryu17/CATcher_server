@@ -42,7 +42,6 @@
 			obj.put("lately_order", rs.getInt("lately_order"));
 			obj.put("group_id", rs.getInt("group_id"));
 			obj.put("msg_order", rs.getInt("msg_order"));
-			obj.put("free_order", rs.getInt("free_order"));
 			
 			if(obj != null)
 				arrayLately.add(obj);

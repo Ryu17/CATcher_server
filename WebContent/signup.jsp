@@ -10,7 +10,7 @@
 <%@ page import="org.json.simple.parser.JSONParser" %>
 <%@ page import="org.json.simple.JSONArray" %>
 <%@ page import="org.json.simple.JSONObject" %>
-<%@ page import="data.CategoryInfo" %>
+<%@ page import="data.ListInfo" %>
 <%@ page import="data.TalkInfo" %>
 <%@ page import="service.user.UserInfoService" %>
 <%@ page import="dao.UserInfoDAO" %>
@@ -55,8 +55,8 @@
 		Connection conn = ConnectionProvider.getConnection(); 
 		 
 
-		pstmt = conn.prepareStatement("INSERT INTO textIsland.user (`pub_id`, `account_type`, `device_type`, `login_id`, `login_pw`, `user_name`, `max_stamina`, `stamina`, `free_day1`, `free_day2`, `free_day3`, `free_day4`, `free_cnt`, `profile_info`, `wait_time`)"
-				+ " VALUES (?, ?, ?, ?, ?, ?, '1', '1', '0', '0', '0', '0', '0', ?, '0');");
+		pstmt = conn.prepareStatement("INSERT INTO textIsland.user (`pub_id`, `account_type`, `device_type`, `login_id`, `login_pw`, `user_name`, `max_stamina`, `stamina`, `free_day1`, `free_day2`, `free_day3`, `free_day4`, `profile_info`, `wait_time`)"
+				+ " VALUES (?, ?, ?, ?, ?, ?, '1', '1', '0', '0', '0', '0', ?, '0');");
 		
 		String m_pub_id = UUID.randomUUID().toString().replaceAll("-", "");
 		

@@ -41,9 +41,9 @@ public class UserInfoDAO {
 		int free_day2 = rs.getInt("free_day2");
 		String free_day3 = rs.getString("free_day3");
 		int free_day4 = rs.getInt("free_day4");
-		int free_cnt = rs.getInt("free_cnt");
 		String profile_info = rs.getString("profile_info");
 		int wait_time = rs.getInt("wait_time");
+		String like_check = rs.getString("like_check");
 		
 		//가져온 값들을 UserInfo로 만들어 줍니다.
 		UserInfo userInfo = new UserInfo(pub_id, 
@@ -59,9 +59,9 @@ public class UserInfoDAO {
 										free_day2,
 										free_day3,
 										free_day4,
-										free_cnt,
 										profile_info,
-										wait_time);
+										wait_time,
+										like_check);
 		
 		return userInfo;
 	}

@@ -21,7 +21,6 @@ public class TalkInfoDAO {
 	public TalkInfo makeTalkInfoFromResultSet(ResultSet rs) throws SQLException {
 		//각 항목들의 값을 가져옵니다.
 		
-		int i_category_id = rs.getInt("category_id");
 		int i_group_id = rs.getInt("group_id");
 		int i_id = rs.getInt("id");
 		int i_msg_order = rs.getInt("msg_order");
@@ -35,9 +34,8 @@ public class TalkInfoDAO {
 
 		//가져온 값들을 TalkInfo로 만들어 줍니다.
 		TalkInfo talkInfo = new TalkInfo(
-								i_category_id,
 								i_group_id,
-								i_id, 								
+								i_id, 
 								i_msg_order,
 								f_delay,
 								s_speaker,
@@ -47,22 +45,20 @@ public class TalkInfoDAO {
 								i_stm_check,
 								s_profile_img
 								);
-		
+
 		return talkInfo;
 	}
 	
 	//쿼리문을 실행시켜서 TalkID값에 따라 결과값을 가져옵니다.
-	public TalkInfo selectByTalkId(Connection conn, int param_id) throws SQLException {
+	public TalkInfo selectByTalkId(Connection conn, String group_id, int param_order) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		try {
-			pstmt = conn.prepareStatement (
-				"SELECT c.category_id, c.group_id, t.id, t.msg_order, t.delay, t.speaker, t.msg_view_point, t.msg_type, t.msg_data, t.stm_check, t.profile_img "
-				+ "FROM category_list AS c INNER JOIN story_talk AS t ON c.group_id = t.group_id "
-				+ "WHERE t.id = ?;");	
+			pstmt = conn.prepareStatement ("SELECT * FROM story_talk WHERE group_id = ? and msg_order = ?;");	
 			
-			pstmt.setInt(1, param_id);
+			pstmt.setString(1, group_id);
+			pstmt.setInt(2, param_order);
 			rs = pstmt.executeQuery();
 
 			if(rs.next()) {	

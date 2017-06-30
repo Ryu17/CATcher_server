@@ -15,13 +15,13 @@ public class UserInfo {
 	private int free_day2;
 	private String free_day3;
 	private int free_day4;
-	private int free_cnt;
 	private String profile_info;
 	private int wait_time;
+	private String like_check;
 
 	public UserInfo (String pub_id, int account_type, int device_type, String login_id, String login_pw,
 			int user_key, String user_name, int max_stamina, int stamina, 
-			String free_day1, int free_day2, String free_day3, int free_day4, int free_cnt, String profile_info, int wait_time)
+			String free_day1, int free_day2, String free_day3, int free_day4, String profile_info, int wait_time, String like_check)
 	{
 		this.setPub_id(pub_id);
 		this.setAccount_type(account_type);
@@ -36,9 +36,9 @@ public class UserInfo {
 		this.setFree_day2(free_day2);
 		this.setFree_day3(free_day3);
 		this.setFree_day4(free_day4);
-		this.setFree_cnt(free_cnt);
 		this.setProfile_info(profile_info);
 		this.setWait_time(wait_time);
+		this.setLike_check(like_check);
 	}
 
 	public String getPub_id() {
@@ -144,14 +144,6 @@ public class UserInfo {
 	public void setFree_day4(int free_day4) {
 		this.free_day4 = free_day4;
 	}
-
-	public int getFree_cnt() {
-		return free_cnt;
-	}
-
-	public void setFree_cnt(int free_cnt) {
-		this.free_cnt = free_cnt;
-	}
 	
 	public String getProfile_info() {
 		return profile_info;
@@ -167,6 +159,14 @@ public class UserInfo {
 
 	public void setWait_time(int wait_time) {
 		this.wait_time = wait_time;
+	}
+	
+	public String getLike_check() {
+		return like_check;
+	}
+	
+	public void setLike_check(String like_check) {
+		this.like_check = like_check;
 	}
 			
 }

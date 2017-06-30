@@ -10,7 +10,7 @@
 <%@ page import="org.json.simple.parser.JSONParser" %>
 <%@ page import="org.json.simple.JSONArray" %>
 <%@ page import="org.json.simple.JSONObject" %>
-<%@ page import="data.CategoryInfo" %>
+<%@ page import="data.ListInfo" %>
 <%@ page import="data.TalkInfo" %>
 <%@ page import="dao.UserInfoDAO" %>
 <%@ page import="connection.ConnectionProvider" %>
@@ -46,7 +46,7 @@
 	{
 		//정보 수집.
 		
-		pstmt = conn.prepareStatement("UPDATE textIsland.user_lately SET `lately_order`= ?, `group_id`= ?, `msg_order`= ?, `free_order`='0' WHERE `order`= ?;");
+		pstmt = conn.prepareStatement("UPDATE textIsland.user_lately SET `lately_order`= ?, `group_id`= ?, `msg_order`= ? WHERE `order`= ?;");
 		
 		pstmt.setString(1, param_lately);//
 		pstmt.setString(2, param_group); //

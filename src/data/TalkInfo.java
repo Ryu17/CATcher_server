@@ -3,7 +3,6 @@ package data;
 //TalkInfo 클래스입니다.
 public class TalkInfo {
 
-	private int category_id;
 	private int group_id;
 	private int id;
 	private int msg_order;
@@ -16,10 +15,9 @@ public class TalkInfo {
 	private String profile_img;
 	
 	public TalkInfo
-	(int category_id, int group_id, int id, int msg_order, float delay, String speaker,
+	(int group_id, int id, int msg_order, float delay, String speaker,
 			String msg_view_point, String msg_type, String msg_data, int stm_check, String profile_img)
 	{
-		this.setCategory_id(category_id);
 		this.setGroup_id(group_id);
 		this.setId(id);
 		this.setMsg_order(msg_order);
@@ -102,14 +100,6 @@ public class TalkInfo {
 
 	public void setStm_check(int stm_check) {
 		this.stm_check = stm_check;
-	}
-
-	public int getCategory_id() {
-		return category_id;
-	}
-
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
 	}
 
 	public String getProfile_img() {

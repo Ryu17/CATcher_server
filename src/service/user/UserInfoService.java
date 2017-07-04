@@ -30,7 +30,6 @@ public class UserInfoService {
 		userObj.put("free_day4", userInfo.getFree_day4());
 		userObj.put("profile_info", userInfo.getProfile_info());
 		userObj.put("wait_time", userInfo.getWait_time());
-		userObj.put("like_check", userInfo.getLike_check());
 
 		return userObj;		
 	}

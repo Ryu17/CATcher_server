@@ -31,6 +31,8 @@ public class ListInfoDAO{
 		int t_category_id = rs.getInt("category_id");
 		int t_date = rs.getInt("date");
 		int t_bg_img = rs.getInt("bg_img");
+		String t_cont = rs.getString("continuity");
+		String t_synopsis = rs.getString("synopsis");
 
 		//가져온 값들을 ListInfo로 만들어 줍니다.
 		ListInfo listInfo = new ListInfo(
@@ -43,7 +45,9 @@ public class ListInfoDAO{
 										t_like_count,
 										t_category_id,
 										t_date,
-										t_bg_img);
+										t_bg_img,
+										t_cont,
+										t_synopsis);
 		return listInfo;
 	}
 	

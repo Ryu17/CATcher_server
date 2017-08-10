@@ -13,8 +13,10 @@ public class ListInfo {
 	private int category_id;
 	private int date;
 	private int bg_img;
+	private String continuity;
+	private String synopsis;
 	
-	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img)
+	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img, String continuity, String synopsis)
 	{
 		this.setId(id);
 		this.setGroup_id(group_id);
@@ -26,6 +28,8 @@ public class ListInfo {
 		this.setCategory_id(category_id);
 		this.setDate(date);
 		this.setBg_img(bg_img);
+		this.setCont(continuity);
+		this.setSynopsis(synopsis);
 	}
 	
 	public int getId() {
@@ -106,5 +110,21 @@ public class ListInfo {
 	
 	public void setBg_img(int bg_img) {
 		this.bg_img = bg_img;
+	}
+	
+	public String getCont() {
+		return continuity;
+	}
+	
+	public void setCont(String continuity) {
+		this.continuity = continuity;
+	}
+	
+	public String getSynopsis() {
+		return synopsis;
+	}
+	
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
 	}
 }

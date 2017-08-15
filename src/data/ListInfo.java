@@ -15,8 +15,9 @@ public class ListInfo {
 	private int bg_img;
 	private String continuity;
 	private String synopsis;
+	private int nologinrecommend;
 	
-	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img, String continuity, String synopsis)
+	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img, String continuity, String synopsis, int nologinrecommend)
 	{
 		this.setId(id);
 		this.setGroup_id(group_id);
@@ -30,6 +31,7 @@ public class ListInfo {
 		this.setBg_img(bg_img);
 		this.setCont(continuity);
 		this.setSynopsis(synopsis);
+		this.setNologinrecommend(nologinrecommend);
 	}
 	
 	public int getId() {
@@ -126,5 +128,13 @@ public class ListInfo {
 	
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+	
+	public int getNologinrecommend() {
+		return nologinrecommend;
+	}
+	
+	public void setNologinrecommend(int nologinrecommend) {
+		this.nologinrecommend = nologinrecommend;
 	}
 }

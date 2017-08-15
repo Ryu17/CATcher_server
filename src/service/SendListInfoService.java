@@ -25,6 +25,7 @@ public class SendListInfoService {
 		listObj.put("bg_img", listInfo.getBg_img());
 		listObj.put("continuity", listInfo.getCont());
 		listObj.put("synopsis", listInfo.getSynopsis());
+		listObj.put("nologinrecommend",listInfo.getNologinrecommend());
 		
 		return listObj;
 	}

@@ -27,6 +27,7 @@
 	  	ReadListInfoService readListInfoService = 
 				ReadListInfoService.getInstance();
 		readListInfoService.ConvertDB2Data();
+		System.out.println("test log");
 	}
 	else if (param_index.equals("2"))
 	{

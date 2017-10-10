@@ -6,32 +6,41 @@ public class ListInfo {
 	private int id;
 	private int group_id;
 	private String author;
-	private String img_id;
 	private String title;
 	private int view_count;
 	private int like_count;
+	private int unlike_count;
 	private int category_id;
 	private int date;
-	private int bg_img;
 	private String continuity;
 	private String synopsis;
 	private int nologinrecommend;
+	private String hashtag1;
+	private String hashtag2;
+	private String hashtag3;
+	private String hashtag4;
+	private String hashtag5;
 	
-	public ListInfo(int id, int group_id, String author, String img_id, String title, int view_count, int like_count, int category_id, int date, int bg_img, String continuity, String synopsis, int nologinrecommend)
+	public ListInfo(int id, int group_id, String author, String title, int view_count, int like_count, int unlike_count, int category_id, int date, String continuity, 
+					String synopsis, int nologinrecommend, String hashtag1, String hashtag2, String hashtag3, String hashtag4, String hashtag5)
 	{
 		this.setId(id);
 		this.setGroup_id(group_id);
 		this.setAuthor(author);
-		this.setImg_id(img_id);
 		this.setTitle(title);
 		this.setView_count(view_count);
 		this.setLike_count(like_count);
+		this.setUnlike_count(unlike_count);
 		this.setCategory_id(category_id);
 		this.setDate(date);
-		this.setBg_img(bg_img);
 		this.setCont(continuity);
 		this.setSynopsis(synopsis);
 		this.setNologinrecommend(nologinrecommend);
+		this.setHashtag1(hashtag1);
+		this.setHashtag2(hashtag2);
+		this.setHashtag3(hashtag3);
+		this.setHashtag4(hashtag4);
+		this.setHashtag5(hashtag5);
 	}
 	
 	public int getId() {
@@ -58,14 +67,6 @@ public class ListInfo {
 		this.author = author;
 	}
 
-	public String getImg_id() {
-		return img_id;
-	}
-
-	public void setImg_id(String img_id) {
-		this.img_id = img_id;
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -90,6 +91,14 @@ public class ListInfo {
 		this.like_count = like_count;
 	}
 	
+	public int getUnlike_count() {
+		return unlike_count;
+	}
+	
+	public void setUnlike_count(int unlike_count) {
+		this.unlike_count = unlike_count;
+	}
+	
 	public int getCategory_id() {
 		return category_id;
 	}
@@ -104,14 +113,6 @@ public class ListInfo {
 	
 	public void setDate(int date) {
 		this.date = date;
-	}
-	
-	public int getBg_img() {
-		return bg_img;
-	}
-	
-	public void setBg_img(int bg_img) {
-		this.bg_img = bg_img;
 	}
 	
 	public String getCont() {
@@ -136,5 +137,45 @@ public class ListInfo {
 	
 	public void setNologinrecommend(int nologinrecommend) {
 		this.nologinrecommend = nologinrecommend;
+	}
+	
+	public String getHashtag1() {
+		return hashtag1;
+	}
+	
+	public void setHashtag1(String hashtag1) {
+		this.hashtag1 = hashtag1;
+	}
+	
+	public String getHashtag2() {
+		return hashtag2;
+	}
+	
+	public void setHashtag2(String hashtag2) {
+		this.hashtag2 = hashtag2;
+	}
+	
+	public String getHashtag3() {
+		return hashtag3;
+	}
+	
+	public void setHashtag3(String hashtag3) {
+		this.hashtag3 = hashtag3;
+	}
+	
+	public String getHashtag4() {
+		return hashtag4;
+	}
+	
+	public void setHashtag4(String hashtag4) {
+		this.hashtag4 = hashtag4;
+	}
+	
+	public String getHashtag5() {
+		return hashtag5;
+	}
+	
+	public void setHashtag5(String hashtag5) {
+		this.hashtag5 = hashtag5;
 	}
 }

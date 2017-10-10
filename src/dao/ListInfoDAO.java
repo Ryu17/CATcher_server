@@ -24,32 +24,41 @@ public class ListInfoDAO{
 		int t_id = rs.getInt("id");
 		int t_group_id = rs.getInt("group_id");
 		String t_author = rs.getString("author");
-		String t_image_id = rs.getString("img_id");
 		String t_title = rs.getString("title");
 		int t_view_count = rs.getInt("view_count");
 		int t_like_count = rs.getInt("like_count");
+		int t_unlike_count = rs.getInt("unlike_count");
 		int t_category_id = rs.getInt("category_id");
 		int t_date = rs.getInt("date");
-		int t_bg_img = rs.getInt("bg_img");
 		String t_cont = rs.getString("continuity");
 		String t_synopsis = rs.getString("synopsis");
 		int t_nologinrecommend = rs.getInt("nologinrecommend");
+		String t_hashtag1 = rs.getString("hashtag1");
+		String t_hashtag2 = rs.getString("hashtag2");
+		String t_hashtag3 = rs.getString("hashtag3");
+		String t_hashtag4 = rs.getString("hashtag4");
+		String t_hashtag5 = rs.getString("hashtag5");
+		
 		System.out.println("java class test");
 		//가져온 값들을 ListInfo로 만들어 줍니다.
 		ListInfo listInfo = new ListInfo(
 										t_id,
 										t_group_id,
 										t_author,
-										t_image_id,
 										t_title,
 										t_view_count,
 										t_like_count,
+										t_unlike_count,
 										t_category_id,
 										t_date,
-										t_bg_img,
 										t_cont,
 										t_synopsis,
-										t_nologinrecommend);
+										t_nologinrecommend,
+										t_hashtag1,
+										t_hashtag2,
+										t_hashtag3,
+										t_hashtag4,
+										t_hashtag5);
 		return listInfo;
 	}
 	

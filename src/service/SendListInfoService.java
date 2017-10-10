@@ -16,16 +16,20 @@ public class SendListInfoService {
 		listObj.put("id", listInfo.getId());
 		listObj.put("group_id", listInfo.getGroup_id());
 		listObj.put("author", listInfo.getAuthor());
-		listObj.put("img_id", listInfo.getImg_id());
 		listObj.put("title", listInfo.getTitle());
 		listObj.put("view_count", listInfo.getView_count());
 		listObj.put("like_count", listInfo.getLike_count());
+		listObj.put("unlike_count", listInfo.getUnlike_count());
 		listObj.put("category_id", listInfo.getCategory_id());
 		listObj.put("date", listInfo.getDate());
-		listObj.put("bg_img", listInfo.getBg_img());
 		listObj.put("continuity", listInfo.getCont());
 		listObj.put("synopsis", listInfo.getSynopsis());
 		listObj.put("nologinrecommend",listInfo.getNologinrecommend());
+		listObj.put("hashtag1",listInfo.getHashtag1());
+		listObj.put("hashtag2",listInfo.getHashtag2());
+		listObj.put("hashtag3",listInfo.getHashtag3());
+		listObj.put("hashtag4",listInfo.getHashtag4());
+		listObj.put("hashtag5",listInfo.getHashtag5());
 		
 		return listObj;
 	}

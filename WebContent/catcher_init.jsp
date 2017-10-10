@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <%@ page import="java.net.URLEncoder" %>
 <%@	page import="java.util.*"%>
@@ -13,7 +13,7 @@
 <%@ page import="connection.JdbcUtil" %>
 <%
 	request.setCharacterEncoding("UTF-8");
-	
+	// test log
 	PreparedStatement pstmt = null;
 	Statement stmt = null;
 	Connection conn = ConnectionProvider.getConnection();

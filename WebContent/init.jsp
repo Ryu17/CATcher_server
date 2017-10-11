@@ -12,6 +12,7 @@
 <%@ page import="data.TalkInfo" %>
 <%@ page import="service.ReadTalkInfoService" %>
 <%@ page import="service.ReadListInfoService" %>
+<%@ page import="service.SendTalkInfoService" %>
 <%@ page import="service.SendListInfoService" %>
 <%@ page import="service.SendInfoService" %>
 

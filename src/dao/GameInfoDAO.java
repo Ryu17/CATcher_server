@@ -22,10 +22,11 @@ public class GameInfoDAO{
 	public GameInfo makeListInfoFromResultSet(ResultSet rs) throws SQLException {
 		//각 항목들의 값을 가져옵니다.
 		int i_version = rs.getInt("latest_version");
+		int image_download = rs.getInt("image_download");
 		System.out.println(i_version);
 
 		//가져온 값들을 gameInfo로 만들어 줍니다.
-		GameInfo gameInfo = new GameInfo(i_version);
+		GameInfo gameInfo = new GameInfo(i_version, image_download);
 		
 		return gameInfo;
 	}

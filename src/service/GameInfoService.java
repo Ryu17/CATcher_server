@@ -16,6 +16,7 @@ public class GameInfoService {
 		JSONObject gameObj = new JSONObject();
 
 		gameObj.put("latest_version", gameInfo.getVersion());
+		gameObj.put("image_download", gameInfo.getImageDownload());
 		
 		return gameObj;		
 	}

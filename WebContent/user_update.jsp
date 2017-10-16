@@ -19,10 +19,10 @@
 	request.setCharacterEncoding("UTF-8");
 	String param_update = request.getParameter("param_update");
 	String param_user_key = request.getParameter("param_key");
-	String param_order = request.getParameter("param_order");
-	String param_lately = request.getParameter("param_lately");
+	String param_readtime = request.getParameter("param_readtime");
+	String param_userID = request.getParameter("param_userID");
 	String param_group = request.getParameter("param_group");
-	String param_msg = request.getParameter("param_msg");
+	String param_line = request.getParameter("param_line");
 	String param_free1 = request.getParameter("param_free1");
 	String param_free2 = request.getParameter("param_free2");
 	String param_free3 = request.getParameter("param_free3");
@@ -46,12 +46,12 @@
 	{
 		//정보 수집.
 		
-		pstmt = conn.prepareStatement("UPDATE textIsland.user_lately SET `lately_order`= ?, `group_id`= ?, `msg_order`= ? WHERE `order`= ?;");
+		pstmt = conn.prepareStatement("INSERT INTO textIsland.user_lately VALUES (?, ?, ?, ?);");
 		
-		pstmt.setString(1, param_lately);//
+		pstmt.setString(1, param_userID);//
 		pstmt.setString(2, param_group); //
-		pstmt.setString(3, param_msg);//
-		pstmt.setString(4, param_order);//
+		pstmt.setString(3, param_line);//
+		pstmt.setString(4, param_readtime);//
 		
 		int r = pstmt.executeUpdate();
 		

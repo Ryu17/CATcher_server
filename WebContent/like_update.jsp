@@ -48,7 +48,7 @@
 		String param_user_key = request.getParameter("param_user_key");
 		String param_group_id = request.getParameter("param_group_id");
 		
-		likeInfoService.DifLikeData(param_user_key, param_group_id);
+		likeInfoService.SumUnLikeData(param_user_key, param_group_id);
 	}
 	
 	else if (param_index.equals("4"))

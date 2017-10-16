@@ -45,25 +45,26 @@ public class LikeInfoDAO{
 		}	
 	}
 	
-	// USER_LIKE_DATA 에서 좋아요 읽은 만큼 추가 & 삭제
+	// USER_LIKE_DATA 에서 좋아요 읽은 만큼 추가 & 아쉬워요 추가
 	public void UpdateByLikeInfo(Connection conn, String param_user_key, String param_group_id, int index) throws SQLException {
 		PreparedStatement pstmt = null;
 
 		System.out.println(param_user_key);
 		System.out.println(param_group_id);
 		try {
-			// 추가
+			// 좋아요 추가
 			if(index == 1){
-				pstmt = conn.prepareStatement ("INSERT INTO textIsland.user_like VALUES (?, ?);");
+				pstmt = conn.prepareStatement ("INSERT INTO textIsland.user_like VALUES (?, ?, ?);");
 			}
 			
-			// 삭제
+			// 아쉬워요 추가
 			else if(index == 0){
-				pstmt = conn.prepareStatement ("DELETE FROM textIsland.user_like WHERE user_key = ? AND group_id = ?;");
+				pstmt = conn.prepareStatement ("INSERT INTO textIsland.user_like VALUES (?, ?, ?);");
 			}
 			
 			pstmt.setString(1, param_user_key);
 			pstmt.setString(2, param_group_id);
+			pstmt.setInt(3, index);
 			
 			System.out.println(pstmt);
 			
@@ -78,7 +79,7 @@ public class LikeInfoDAO{
 		}
 	}
 	
-	// STORY_TALK_TITLE_DATA 에서 좋아요 카운트 증가 & 감소
+	// STORY_TALK_TITLE_DATA 에서 좋아요 카운트 증가 & 아쉬워요 카운트 증가
 	public void UpdateByLikeCount(Connection conn, String param_group_id, int index) throws SQLException {
 		PreparedStatement pstmt = null;
 		
@@ -89,7 +90,7 @@ public class LikeInfoDAO{
 			}
 			// like_count --
 			else if(index == 0) {
-				pstmt = conn.prepareStatement ("UPDATE textIsland.story_talk_title SET like_count = like_count - 1 WHERE group_id = ?;");
+				pstmt = conn.prepareStatement ("UPDATE textIsland.story_talk_title SET unlike_count = unlike_count + 1 WHERE group_id = ?;");
 			}
 			pstmt.setString(1, param_group_id);
 			pstmt.executeUpdate();

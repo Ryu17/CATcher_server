@@ -91,7 +91,7 @@ public class LikeInfoService {
 		}
 	}
 	
-	public void DifLikeData(String param_user_key, String param_group_id) {
+	public void SumUnLikeData(String param_user_key, String param_group_id) {
 		Connection conn = null;
 		
 		try {	
@@ -101,7 +101,7 @@ public class LikeInfoService {
 
 			//입력받은 user_key와 group_id로 USER_LIKE_DATA에 데이터 추가 (마지막 parameter 는 0)
 			likeInfoDAO.UpdateByLikeInfo(conn, param_user_key, param_group_id, 0);
-			//입력받은 group_id로 STORY_TALK_TITLE_DATA에 like_count ++ (마지막 parameter 는 0)
+			//입력받은 group_id로 STORY_TALK_TITLE_DATA에 unlike_count ++ (마지막 parameter 는 0)
 			likeInfoDAO.UpdateByLikeCount(conn, param_group_id, 0);
 						
 		} catch (SQLException e){

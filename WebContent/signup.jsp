@@ -77,42 +77,7 @@
 		{
 			System.out.println("---------------SIGNUP fail-------------------");
 		}
-		
-		pstmt = conn.prepareStatement("SELECT * FROM textIsland.user WHERE `login_id` = ?");
-		pstmt.setString(1, param_id);
-		
-		ResultSet rs = pstmt.executeQuery();
-		
-		int key = 0;
-		System.out.println("------------------- SELECT user_key -------------------");
-		System.out.println(key);
-		while(rs.next()){
-			key = rs.getInt("user_key");
-			System.out.println("------------------- WHILE user_key -------------------");
-			System.out.println(key);
-		}
-		
-		for(int i = 1; i <= 10; i++){
-			pstmt = conn.prepareStatement("INSERT INTO textIsland.user_lately (`order`, `user_key`) VALUES (?, ?)");
-			
-			int sum = ((key - 1) * 10) + i;
-			
-			pstmt.setInt(1, sum);
-			pstmt.setInt(2, key);
-			
-			r = pstmt.executeUpdate();
-			
-			if(r == 1){
-				System.out.println("-------------------LATELY success---------------");
-			}
-			else
-			{
-				System.out.println("---------------LATELY fail-------------------");
-			}
-		}
-		
-		
-		
+						
 		JdbcUtil.close(pstmt);
 		JdbcUtil.close(conn);
 	}

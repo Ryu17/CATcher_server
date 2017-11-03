@@ -55,8 +55,8 @@
 		Connection conn = ConnectionProvider.getConnection(); 
 		 
 
-		pstmt = conn.prepareStatement("INSERT INTO textIsland.user (`pub_id`, `account_type`, `device_type`, `login_id`, `login_pw`, `user_name`, `max_stamina`, `stamina`, `free_day1`, `free_day2`, `free_day3`, `free_day4`, `profile_info`, `wait_time`)"
-				+ " VALUES (?, ?, ?, ?, ?, ?, '1', '1', '0', '0', '0', '0', ?, '0');");
+		pstmt = conn.prepareStatement("INSERT INTO textIsland.user (`pub_id`, `account_type`, `device_type`, `login_id`, `login_pw`, `user_name`, `max_stamina`, `stamina`, `free_day1`, `free_day2`, `free_day3`, `free_day4`, `profile_info`, `wait_time`, `3day_coupon`)"
+				+ " VALUES (?, ?, ?, ?, ?, ?, '1', '1', '0', '0', '0', '0', ?, '0', '0');");
 		
 		String m_pub_id = UUID.randomUUID().toString().replaceAll("-", "");
 		

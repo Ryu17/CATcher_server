@@ -17,10 +17,11 @@ public class UserInfo {
 	private int free_day4;
 	private String profile_info;
 	private int wait_time;
+	private int coupon;
 
 	public UserInfo (String pub_id, int account_type, int device_type, String login_id, String login_pw,
 			int user_key, String user_name, int max_stamina, int stamina, 
-			String free_day1, int free_day2, String free_day3, int free_day4, String profile_info, int wait_time)
+			String free_day1, int free_day2, String free_day3, int free_day4, String profile_info, int wait_time, int coupon)
 	{
 		this.setPub_id(pub_id);
 		this.setAccount_type(account_type);
@@ -37,6 +38,7 @@ public class UserInfo {
 		this.setFree_day4(free_day4);
 		this.setProfile_info(profile_info);
 		this.setWait_time(wait_time);
+		this.set3day_coupon(coupon);
 	}
 
 	public String getPub_id() {
@@ -157,6 +159,14 @@ public class UserInfo {
 
 	public void setWait_time(int wait_time) {
 		this.wait_time = wait_time;
+	}
+	
+	public int get3day_coupon() {
+		return coupon;
+	}
+
+	public void set3day_coupon(int coupon) {
+		this.coupon = coupon;
 	}
 			
 }

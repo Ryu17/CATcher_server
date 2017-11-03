@@ -31,6 +31,8 @@
 	String param_stm = request.getParameter("param_stm");
 	String param_m_stm = request.getParameter("param_m_stm");
 	String param_wait = request.getParameter("param_wait");
+	String param_location = request.getParameter("param_location");
+	String param_t_id = request.getParameter("param_t_id");
 
 	PreparedStatement pstmt = null;
 	
@@ -134,6 +136,49 @@
 		JdbcUtil.close(pstmt);
 		JdbcUtil.close(conn);
 	}
+	else if(param_update.equals("3day_coupon"))
+	{
+		pstmt = conn.prepareStatement("UPDATE textIsland.user SET `3day_coupon` = ? WHERE `user_key`= ?;");
+		
+		pstmt.setString(1, "1");	
+		pstmt.setString(2, param_user_key);
+		
+		int r = pstmt.executeUpdate();
+		
+		if(r == 1){
+			System.out.println("-------------------success---------------");
+		}
+		else
+		{
+			System.out.println("---------------fail-------------------");
+		}
+
+		JdbcUtil.close(pstmt);
+		JdbcUtil.close(conn);
+	}
+	else if(param_update.equals("purchase_finish"))
+	{
+		pstmt = conn.prepareStatement("INSERT INTO textIsland.payer (`login_id`, `location`, `trans_ident`, `date`) VALUES (?, ?, ?, ?);");
+		
+		pstmt.setString(1, param_userID);	
+		pstmt.setString(2, param_location);
+		pstmt.setString(3, param_t_id);
+		pstmt.setString(4, param_free1);
+		
+		int r = pstmt.executeUpdate();
+		
+		if(r == 1){
+			System.out.println("-------------------success---------------");
+		}
+		else
+		{
+			System.out.println("---------------fail-------------------");
+		}
+
+		JdbcUtil.close(pstmt);
+		JdbcUtil.close(conn);
+	}
+	
 	else		
 	{
 		System.out.println("----- param_update == null -----");			
